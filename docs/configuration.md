@@ -4,7 +4,7 @@ sidebar_position: 1
 
 # Configuration
 
-Let's discover **Opensql in less than 5 minutes**.
+Let's discover **OpenSql in less than 5 minutes**.
 
 ## Getting Started
 
@@ -28,14 +28,15 @@ $ npm i --save-dev mssql # Microsoft Sql Server
 
 ## Connecting to a database
 
-To connect to the database, you must create a [`Opensql`](./beginner/connection) instance. This can be done by either passing the connection parameters separately to the Opensql constructor or by passing a single connection URI:
+To connect to the database, you must create a [`OpenSql`](./beginner/connection) instance. This can be done by either
+passing the connection parameters separately to the OpenSql constructor or by passing a single connection URI:
 
 ```ts
-import {OpenSql} from 'opensql';
+import { OpenSql } from 'opensql';
 
 let opensql = new OpenSql('mysql://localhost:3306/foo?user=root&password=123');
 
-opensql.findOne({from: 'users'}).then((data: any) => {
-    console.log(data)
+opensql.findOne({ from: 'users' }).then((data: any) => {
+  console.log(data)
 });
 ```

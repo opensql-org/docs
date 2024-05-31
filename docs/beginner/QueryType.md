@@ -1,7 +1,7 @@
 # Query Type
 
 In this section, we deal with `Query` object in CRUD parameters,
-As you filter data in your sql queries, you can do this in Opensql.
+As you filter data in your sql queries, you can do this in OpenSql.
 
 `Query` object :
 
@@ -18,8 +18,9 @@ As you filter data in your sql queries, you can do this in Opensql.
 
 `Where` object :
 
-The use of the where key is only limited to find, update and remove operations. In fact, it is a filter on the data output.
- When you want to perform an operation on a specific range of data, you use this key in your queries.
+The use of the where key is only limited to find, update and remove operations. In fact, it is a filter on the data
+output.
+When you want to perform an operation on a specific range of data, you use this key in your queries.
 
 | key        | type | required | description |
 |------------|------|----------|-------------|
@@ -53,29 +54,32 @@ Glide option is a set of well-known keys such as `group by`, `order by`, `having
 
 `FnResult` object :
 
-The output of all function helpers is of FnResult type. Opensql does not know which type of join and which type of comparison operator is used in the written query, so you have to specify it.
+The output of all function helpers is of FnResult type. OpenSql does not know which type of join and which type of
+comparison operator is used in the written query, so you have to specify it.
 
 :::tip
- By default, the relation type is AND and the comparison operator is =.
+By default, the relation type is `AND` and the comparison operator is `=`.
 :::
-
 
 | key                | type                                                                | required | description              |
 |--------------------|---------------------------------------------------------------------|----------|--------------------------|
 | value              | string, number, string[], number[], JSONObject, QCheckValueInObject | true     | Value of Function Helper |
 | type               | string                                                              | true     | Type of Function Helper  |
 | conjunctionType    | string                                                              | false    | AND , OR                 |
-| comparisonOperator | string                                                              | false    | = , >= , <= , ...        |
+| comparisonOperator | string                                                              | false    | `=` , `>=` , `<=` , ...  |
 
 `QCheckValueInObject` object :
 
 Used When you need query something like this :
 
 ```sql
-SELECT * FROM Customers WHERE NOT Country='Germany' AND NOT Country='USA';
+SELECT *
+FROM Customers
+WHERE NOT Country = 'Germany'
+  AND NOT Country = 'USA';
 ```
 
-| key     | type           | required |                                                                                                                |
+| key     | type           | required | 
 |---------|----------------|----------|
 | value   | string, number | true     |
 | haveNot | boolean        | false    |
